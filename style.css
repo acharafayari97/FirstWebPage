@@ -1,0 +1,520 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+}
+@media(min-width: 768px){
+    .gridprincipale{
+        height: 200vh;
+        width: 100%;
+        display: grid;
+        grid: repeat(2, 100px) 1000px 200px 250px / 4fr;
+        grid-template-areas:
+        "navbar navbar navbar navbar"
+        "titolo titolo titolo titolo"
+        "principale principale principale aside"
+        "iframe iframe iframe iframe"
+        "fine fine fine fine";
+    }
+}
+/*.linea{
+    border: 1px solid red;
+}*/
+nav{
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background: rgb(37, 35, 83);
+}
+header{
+    grid-area: titolo;
+    background-color: lightblue;
+}
+main{
+    grid-area: principale;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-rows: 500px 500px;
+    background-color: lightblue;
+}
+aside{
+    grid-area: aside;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 500px 500px;
+    background-color: lightblue;
+}
+article{
+    grid-area: iframe;
+    display: grid;
+    grid-template-columns: 1.3fr 1.3fr 1.3fr;
+    background-color: lightblue;
+}
+footer{
+    grid-area: fine;
+    display: grid;
+    grid-template-columns: 1.3fr 1.3fr 1.3fr;
+    grid-template-rows: 250px;
+    background: rgb(37, 35, 83);
+}
+.container-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    width: 100px;
+    height: 100px;
+}
+.menu-trigger{
+    display: none;
+}
+@media (max-width: 768px) {
+    .menu-trigger{
+        display: block;
+        position: fixed;
+        padding: 5%;
+        top: -13px;
+        right: 0;
+        z-index: 150;
+        font-size: 50px;
+        font-weight: bold
+    }
+    .menu-open .menu{
+        transform:translateX(0%);
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+    
+    .menu{
+        transition: 1s all ease-in-out;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        padding: 5%;
+        display: block;
+        z-index: 150;
+        background: rgb(37, 35, 83);
+        display: flex;
+        flex-direction: column;
+        width: 75vh;
+        transform: translatex(-100%);
+        border-radius: 0px 10px 10px 0px;
+        height: 100vh;
+    }
+    .menu a{
+        display: block;
+        padding: 10px;
+        font-size: 22px;
+        z-index: 150;
+        color: black;
+    }
+}
+.menu{
+    display:flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu a{
+    color: aliceblue;
+    text-decoration: none;
+    font-size: 33px;
+    font-weight: bold;
+    font-family: Georgia;
+    font-style: italic;
+    transition: all 0.5s ease;
+}
+.menu a:hover{
+    color: darkgoldenrod;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cerca{
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    border-radius: 10px 0px 0px 10px;
+}
+#button{
+    width: 30px;
+    height: 40px;
+    text-align: center;
+    border-radius: 0px 10px 10px 0px;
+    transition: 0.4s ease-in-out;
+}
+#button:hover{
+    background: darkgoldenrod;
+    transform: scale(1.1);
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#titolo{
+    font-size: 52px;
+    color: darkgoldenrod;
+    font-style: italic;
+    font-family: Georgia;
+    box-shadow: 0px 10px 25px 0px;
+}
+#element-red{
+    color: brown;
+}
+#titolo>span{
+    color: black;
+}
+.descrizione{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+legend{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Georgia;
+    font-style: italic;
+    color: darkgoldenrod;
+}
+#testo-scrol{
+    color: aliceblue;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    background-color: rgb(37, 35, 83);
+    border: 4px solid darkred;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 400;
+    font-style: italic;
+    padding: 1px;
+    overflow-y: scroll;
+    width: 300px;
+    height: 430px
+}
+.form-registrazione{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid darkred;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    position: relative;
+    color: aliceblue;
+    background-color: rgb(37, 35, 83);
+}
+.titolo-form{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    position: absolute;
+    top: 30px;
+    color: darkgoldenrod;
+}
+.titolo-form--move{
+    animation: rotate_effect 5s infinite ease-in-out;
+}
+@keyframes rotate_effect{
+    0% {transform: rotate(0deg);}
+    20% {transform: rotate(0deg);}
+    40% {transform: rotate(10deg);}
+    60% {transform: rotate(-10deg);}
+    80% {transform: rotate(0deg);}
+    100% {transform: rotate(0deg);}
+}
+#arrow-form{
+    font-size: large;
+    font-weight: bolder;
+    position: absolute;
+    top: 35px;
+    left: 95px;
+}
+#form-accedi{
+    position: absolute;
+    top: 111px;
+    border: 2px solid darkred;
+    border-radius: 10px;
+    padding: 3px
+}
+#privacy-form{
+    color: rgb(173, 12, 12);
+}
+#accedi-form{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    position: absolute;
+    top: 90px;
+    left: 20px;
+}
+#submit-form{
+    border: 2px solid darkred;
+    border-radius: 4px;
+    width: 80px;
+    height: 20px;
+    font-weight: 700;
+    transition: 0.4s ease-in-out;
+}
+#submit-form:hover{
+    background: darkgoldenrod;
+    transform: scale(1.1);
+}
+#registrati-form{
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    position: absolute;
+    top: 195px;
+    left: 20px;
+}
+#form-registrati{
+    position: absolute;
+    top: 217px;
+    border: 2px solid darkred;
+    border-radius: 10px;
+    padding: 3px
+}
+#form-registrati a{
+   text-decoration: none; 
+}
+#form-registrati a:link{
+    font-size: 16px;
+}
+#form-registrati a:visited{
+    color: darkcyan;
+}
+#form-registrati a:hover{
+    background: lightblue;
+}
+#form-registrati a:active{
+    color: darkred;
+}
+#form-registrati a:focus{
+    color: darkblue;
+}
+.faq img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 360px;
+    left: 472px;
+    border-radius: 10px;
+    transition: 1s ease;
+    transform: scale(1.2);
+}
+    @media(min-width: 768px){
+        .faq img{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 360px;
+            left: 120px;   
+            border-radius: 10px;
+        }
+    }
+.containerCARD1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card1{
+    width: 400px;
+    height: 400px;  
+}
+.card-img-top1{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 4px solid darkred;
+    border-radius: 10px;
+}
+.card-body1{
+    color: black;
+    font-size: large;
+    font-weight: 300;
+    font-family: Georgia;
+    font-style: italic;
+}
+.containerCARD2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card2{
+    width: 400px;
+    height: 400px;
+}
+.card-img-top2{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 4px solid darkred;
+    border-radius: 10px; 
+}
+.card-body2{
+    color: black;
+    font-size: large;
+    font-weight: 300;
+    font-family: Georgia;
+    font-style: italic;
+}
+.containerCARD3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card3{
+    width: 400px;
+    height: 400px;
+}
+.card-img-top3{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 4px solid darkred;
+    border-radius: 10px; 
+}
+.card-body3{
+    color: black;
+    font-size: large;
+    font-weight: 300;
+    font-family: Georgia;
+    font-style: italic;
+}
+.containerCARD4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card4{
+    width: 400px;
+    height: 400px;
+}
+.card-img-top4{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 4px solid darkred;
+    border-radius: 10px; 
+}
+.card-body4{
+    color: black;
+    font-size: large;
+    font-weight: 300;
+    font-family: Georgia;
+    font-style: italic;
+}
+.widget1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#iframe1{
+    border: 2px solid darkred;
+    border-radius: 10px;
+}
+.widget2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#iframe2{
+    border: 2px solid darkred;
+    border-radius: 10px;
+}
+.widget3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#iframe3{
+    border: 2px solid darkred;
+    border-radius: 10px;
+}
+.listaUL{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aliceblue;
+}
+.menufooter{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    list-style-type: none;
+}
+.menufooter a{
+    text-decoration: none;
+}
+.menufooter a:link{
+    font-size: 16px;
+}
+.menufooter a:visited{
+    color: darkcyan;
+}
+.menufooter a:hover{
+    background: lightblue;
+}
+.menufooter a:active{
+    color: darkred;
+}
+.menufooter a:focus{
+    color: darkblue;
+}
+.privacy_policy{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: aliceblue;
+}
+.menuprivacy{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    list-style-type: none;
+}
+.menuprivacy a{
+    text-decoration: none;
+}
+.menuprivacy a:link{
+    font-size: 16px;
+}
+.menuprivacy a:visited{
+    color: darkcyan;
+}
+.menuprivacy a:hover{
+    background: lightblue;
+}
+.menuprivacy a:active{
+    color: darkred;
+}
+.menuprivacy a:focus{
+    color: darkblue;
+}
+.icone{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    color: aliceblue;
+}
+.frasesocial{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow';
+    position: absolute;
+    top: 30px;
+}
+.frasesocial span{
+    position: absolute;
+    top: 25px;
+    left: 32px;
+}
